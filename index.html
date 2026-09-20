@@ -47,7 +47,7 @@
       <div class="project-header">
         <span class="badge">Forløb 1</span>
         <h3>Introduktion til Programmering & Algoritmer</h3>
-        <span class="date">August 2026</span>
+        <span class="date">03-09-2026</span>
       </div>
 
       <div class="project-content">
@@ -63,8 +63,7 @@ int main() {
 
         <h4>Refleksion & Læring</h4>
         <ul>
-          <li>Hvad gik godt undervejs?</li>
-          <li>Hvilke udfordringer stødte du på, og hvordan blev de løst?</li>
+          <li>Det er en simpel kode at starte med, så der var ikke de store problemer</li>
         </ul>
 
         <a href="https://github.com/dit-brugernavn/dit-projekt" target="_blank" class="btn">Se kildekode på GitHub</a>
@@ -76,12 +75,12 @@ int main() {
       <div class="project-header">
         <span class="badge">Forløb 2</span>
         <h3>Introduktion til Programmering & Algoritmer</h3>
-        <span class="date">01-09-2026</span>
+        <span class="date">08-09-2026</span>
       </div>
 
       <div class="project-content">
         <h4>Projektbeskrivelse</h4>
-        <p>I denne opgave skal I finde 5 fejl i koden og rette dem, så programmet virker.</p>
+        <p>ultrasonisk censeor.</p>
 
         <h4>Kildekode / Resultat</h4>
         <pre><code>import time
@@ -116,19 +115,237 @@ while True:
 
         <h4>Refleksion & Læring</h4>
         <ul>
-          <li>Hvad gik godt undervejs?</li>
-          <li>Hvilke udfordringer stødte du på, og hvordan blev de løst?</li>
+          <li>Det var en svære kode, så der blev støt ind i nogle problemer med koden, det blev løst ved hjælp af Jørgen og at prøve forskelige ting indtil det virkede.</li>
         </ul>
 
         <a href="https://wokwi.com/projects/473966111148756993" target="_blank" class="btn">Se wokwi</a>
       </div>
     </article>
 
+    <article class="card project-block">
+      <div class="project-header">
+        <span class="badge">Forløb 3</span>
+        <h3>Introduktion til Programmering & Algoritmer</h3>
+        <span class="date">08-09-2026</span>
+      </div>
 
+      <div class="project-content">
+        <h4>Projektbeskrivelse</h4>
+        <p>ultrasonisk censor.</p>
+
+        <h4>Kildekode / Resultat</h4>
+        <pre><code>import time #Import af biblioteker
+import machine
+from machine import Pin
+
+trig_pin = Pin(7, Pin.OUT) #Initialisering af pins
+echo_pin = Pin(6, Pin.IN)
+LED = Pin(5, Pin.OUT)
+
+def afstand():#til at måle afstand
+    trig_pin.value(0)#Sluk triggeren
+    time.sleep_us(2)
+    trig_pin.value(1)#Send ultralydssignalet
+    time.sleep_us(10)
+    trig_pin.value(0)
+    
+    duration = machine.time_pulse_us(echo_pin, 1, 30000)#Mål tiden
+    
+    return duration# start tid forfra
+
+while True:
+    tid = afstand()#Start målingen
+    print(tid) #udskriv tid
+    
+    meter = round(342.00 * tid / 2000000, 2)#beregn afstand
+    print(meter, "m") #printer afstand
+    
+    if meter < 1: #Tænd eller sluk LED'en
+        LED.value(1)
+    else:
+        LED.value(0)
+        
+    time.sleep(2) #sluk
+
+
+</code></pre>
+
+        <h4>Refleksion & Læring</h4>
+        <ul>
+          <li>Det var en udfordrende kode, jeg kunne lidt af starten, men der efter måtte jeg søge hjælp hos Jørgen og en ai til at give hints til hvad jeg skulle gøre. </li>
+        </ul>
+
+        <a href="https://wokwi.com/projects/474598315471446017" target="_blank" class="btn">Se wokwi</a>
+      </div>
+    </article>
+
+<!-- ================= MODULÆR BLOK: PROJEKT 3 ================= -->
+    <!-- Eleverne kopierer blot denne <section> til nye forløb -->
+    <article class="card project-block">
+      <div class="project-header">
+        <span class="badge">Forløb 3</span>
+        <h3>Introduktion til Programmering & Algoritmer</h3>
+        <span class="date">10-09-2026</span>
+      </div>
+
+      <div class="project-content">
+        <h4>Projektbeskrivelse</h4>
+        <p>Knap.</p>
+
+        <h4>Kildekode / Resultat</h4>
+        <pre><code>// Eksempel på koden der blev skrevet
+int main() {
+    from machine import Pin
+import time
+# Step 1: Initialiser knap og LED
+knap = Pin(7, Pin.IN, Pin.PULL_DOWN)   # Knap på pin 7
+led = Pin(5, Pin.OUT)                  # LED på pin 5
+
+while True:
+    # Step 2: Vent på at knappen bliver trykket ned
+    if knap.value() == 1:
+        # Step 3: Når knappen er trykket ned, tænd LED'en
+        led.value(1)
+        print("Knap trykket - LED tændt")
+
+        # Step 4: Vent et stykke tid
+        time.sleep(0.5)
+
+        # Step 5: Sluk LED'en
+        led.value(0)
+        print("LED slukket")
+
+        # Step 6: Gentag fra step 2
+        time.sleep(0.2)  # lille pause for at undgå dobbelttryk
+
+}</code></pre>
+
+        <h4>Refleksion & Læring</h4>
+        <ul>
+          <li>Det var en dejli simpel kode, jeg har lavet en simular kode, til at tidligere projekt, så jeg kunne kigge på den.</li>
+        </ul>
+
+        
+      </div>
+    </article>
+
+    <!-- ================= MODULÆR BLOK: PROJEKT 4 ================= -->
+    <!-- Eleverne kopierer blot denne <section> til nye forløb -->
+    <article class="card project-block">
+      <div class="project-header">
+        <span class="badge">Forløb 4</span>
+        <h3>Introduktion til Programmering & Algoritmer</h3>
+        <span class="date">10-09-2026</span>
+      </div>
+
+      <div class="project-content">
+        <h4>Projektbeskrivelse</h4>
+        <p>barksencor.</p>
+
+        <h4>Kildekode / Resultat</h4>
+        <pre><code>// Eksempel på koden der blev skrevet
+import time
+from machine import Pin   # Biblioteker
+
+trig = Pin(7, Pin.OUT)    # Trigger-pin
+echo = Pin(6, Pin.IN)     # Echo-pin
+led  = Pin(5, Pin.OUT)    # LED-advarsel
+
+def afstand():
+    trig.value(0)         # Start lav
+    time.sleep_us(2)
+    trig.value(1)         # Send puls
+    time.sleep_us(10)
+    trig.value(0)
+
+    while echo.value() == 0:
+        start = time.ticks_us()   # Puls starter
+    while echo.value() == 1:
+        slut = time.ticks_us()    # Puls slutter
+
+    return (slut - start) * 34300 / 2_000_000   # Beregn afstand
+
+while True:
+    a = afstand()
+    print(a, "cm")        # Vis afstand
+
+    led.value(1 if a < 30 else 0)  # LED ved tæt afstand
+    time.sleep(0.2)       # Lille pause
+}</code></pre>
+
+        <h4>Refleksion & Læring</h4>
+        <ul>
+          <li>Bark sencor var et svært projekt, jeg måtte søge hjælp hos en ai til at guide mig i den rigtige retning. </li>
+        </ul>
+
+        <a href="https://wokwi.com/projects/474779566658867201" target="_blank" class="btn">Se kildekode på GitHub</a>
+      </div>
+    </article>    
+
+    <!-- ================= MODULÆR BLOK: PROJEKT 5 ================= -->
+    <!-- Eleverne kopierer blot denne <section> til nye forløb -->
+    <article class="card project-block">
+      <div class="project-header">
+        <span class="badge">Forløb 5</span>
+        <h3>neo pixel</h3>
+        <span class="date">17-09-2026</span>
+      </div>
+
+      <div class="project-content">
+        <h4>Projektbeskrivelse</h4>
+        <p>Koden under er til ESP32 med nye RGB LED'er, mens link er til wokwi simulation.</p>
+
+        <h4>Kildekode / Resultat</h4>
+        <pre><code>// Eksempel på koden der blev skrevet
+int main() {
+    from machine import Pin
+import neopixel
+from time import sleep
+
+button = Pin(11, Pin.IN, Pin.PULL_UP)
+
+# Timing til WS2812B-MINI-V6
+timing_v6 = (300, 950, 700, 600)
+
+antal_led = 5
+
+leds = neopixel.NeoPixel(
+    Pin(10, Pin.OUT),
+    antal_led,
+    bpp=3,
+    timing=timing_v6
+)
+
+while True:
+    for i in range(antal_led):
+        leds[i] = (255, 0, 0)
+        leds.write()
+        sleep(0.5)
+
+    for i in range(antal_led):
+        leds[i] = (0, 255, 0)
+        leds.write()
+        sleep(0.5)
+
+    for i in range(antal_led):
+        leds[i] = (0, 0, 255)
+        leds.write()
+        sleep(0.5)
+}</code></pre>
+
+        <h4>Refleksion & Læring</h4>
+        <ul>
+          <li>Det er en simpel kode. Der var kun små problemer der var nemme at løse med lidt hjælp fra Jørgen.</li>
+        </ul>
+
+        <a href="https://wokwi.com/projects/475414836780174337" target="_blank" class="btn">Se kildekode på GitHub</a>
+      </div>
+    </article>
   <!-- ================= FOOTER ================= -->
   <footer id="kontakt">
     <p>Dokumentationssite udarbejdet i Programmering C &bull; HTX</p>
   </footer>
 
+  
 </body>
 </html>
